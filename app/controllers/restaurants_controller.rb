@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: %i[show create]
+  before_action :set_restaurant, only: %i[show]
 
   def index
     @restaurants = Restaurant.all
@@ -10,8 +10,8 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    raise
     @restaurant = Restaurant.new(restaurant_params)
+    raise
     @restaurant.save
     redirect_to restaurants_path
   end

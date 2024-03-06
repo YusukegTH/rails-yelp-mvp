@@ -21,11 +21,13 @@
   <%= link_to "Leave a review",  new_restaurant_review_path(@restaurant.id), :class => "btn btn-primary"%>
 </div>
 
-<%= @restaurant.reviews.each do |review| %>
+<%=  @restaurant.reviews %>
+
+<% @restaurant.reviews.each do |review| %>
 
   <div class="container border shadow-sm mx-auto my-3 p-3 bg-light rounded d-flex flex-column justify-content-between">
     <p><i>"<%= review.content%>"</i></p>
     <p>Rating: <%= review.rating%> / 5</p>
-   </div>
+  </div>
 
 <% end %>
